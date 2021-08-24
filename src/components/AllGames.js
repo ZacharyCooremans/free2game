@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
+import styled from 'styled-components'
+import GameCard from './GameCard'
 
 const AllGames = () => {
     const [games, setGames] = useState([])
@@ -34,15 +35,27 @@ const AllGames = () => {
     }, [])
 
     console.log('GAMNES', games[0])
-    
-
 
     return(
         <div>
-            <h2>AGGG</h2>
-            <h3>{games.id}</h3>
+            <Container>
+                {games.map((game) => {
+                    return(
+                        <GameCard key = {game.id} game={game} />
+                    )
+                })}
+            </Container>
         </div>
     )
 }
 
 export default AllGames
+
+const Container = styled.div`
+    display: flex;
+    border: 2px solid red;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    margin: auto;
+`
