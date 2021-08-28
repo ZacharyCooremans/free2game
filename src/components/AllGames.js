@@ -34,14 +34,15 @@ const AllGames = () => {
         })
     }, [])
 
-    console.log('GAMNES', games[0])
-
     return(
         <div>
             <Container>
                 {games.map((game) => {
                     return(
-                        <GameCard key = {game.id} game={game} />
+                        <div>
+
+                            <GameCard key = {game.id} game={game} />
+                        </div>
                     )
                 })}
             </Container>
@@ -53,9 +54,9 @@ export default AllGames
 
 const Container = styled.div`
     display: flex;
+    background-color: #6b7994;
+    color: #d6d9d7;
     border: 2px solid red;
     flex-wrap: wrap;
-    justify-content: space-around;
-    width: 90%;
-    margin: auto;
+    align-content: space-between;
 `
