@@ -1,6 +1,6 @@
 import './App.css';
 import AllGames from './components/AllGames'
-import Details from './components/Details'
+import GameDetails from './components/GameDetails'
 import { Route, Switch} from "react-router-dom"
 
 function App() {
@@ -8,8 +8,8 @@ function App() {
     <div className="App">
       <Switch>
 
-        <Route path='/details'>
-          <Details />
+        <Route path='/GameDetails'>
+          <GameDetails />
         </Route>
         <Route path='/'>
           <AllGames />

@@ -1,19 +1,14 @@
 import styled from 'styled-components'
-import axios from 'axios'
-import { useState } from 'react'
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 const GameCard = (props) => {
-    const [data, setData] = useState([])
 
     const { push } = useHistory()
 
     const click = () => {
-        const id = props.game.id
         localStorage.setItem('id', props.game.id)
-        push('/Details')
+        push('/GameDetails')
     }
-
 
     return (
         <div>
@@ -21,7 +16,9 @@ const GameCard = (props) => {
                 <img src={props.game.thumbnail} alt={props.game.thumbnail} />
                 <h2>Title: {props.game.title}</h2>
                 <h3>Genre: {props.game.genre}</h3>
-                <Desc>Description: {props.game.short_description}</Desc>
+                <ShortC>
+                    <p>Description: {props.game.short_description}</p>
+                </ShortC>
             </Container>
         </div>
     )
@@ -30,14 +27,11 @@ export default GameCard
 
 const Container = styled.div`
     border: 2px solid blue;
-    margin-top: 5%;
-    width: 65%;
-    height: 45%;
-    display: flex;
-    flex-direction: column;
-    
+    width: 500px;
+    height: 425px;
 `
-const Desc = styled.p`
-    color: #d6d9d7;
+
+const ShortC = styled.div`
     width: 75%;
+    margin: auto;
 `
