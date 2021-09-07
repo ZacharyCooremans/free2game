@@ -26,7 +26,6 @@ const AllGames = () => {
         axiosWithAuth()
         .get('/games')
         .then((res) => {
-            console.log(res.data)
             setGames(res.data)
         })
         .catch((err) => {
@@ -39,8 +38,7 @@ const AllGames = () => {
             <Container>
                 {games.map((game) => {
                     return(
-                        <div>
-
+                        <div> 
                             <GameCard key = {game.id} game={game} />
                         </div>
                     )

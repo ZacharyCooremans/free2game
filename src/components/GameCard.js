@@ -1,9 +1,17 @@
 import styled from 'styled-components'
+import axios from 'axios'
+import { useState } from 'react'
+import {useHistory} from 'react-router-dom'
 
 const GameCard = (props) => {
+    const [data, setData] = useState([])
+
+    const { push } = useHistory()
 
     const click = () => {
-        console.log(props.game)
+        const id = props.game.id
+        localStorage.setItem('id', props.game.id)
+        push('/Details')
     }
 
 
