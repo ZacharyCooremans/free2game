@@ -18,7 +18,7 @@ const AllGames = () => {
     }, [])
 
     return(
-        <div>
+        <>
             <Container>
                 {games.map((game) => {
                     return(
@@ -28,7 +28,7 @@ const AllGames = () => {
                     )
                 })}
             </Container>
-        </div>
+        </>
     )
 }
 
