@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import '../styles/GameDetails.css'
 
 const GameDetails = () => {
     const [data, setData] = useState([])
@@ -24,11 +25,33 @@ const GameDetails = () => {
         });
     }, [id])
     console.log(data)
+    const game = data.game_url
+
     return(
-        <div>
-            <h1>Test</h1>
-            <div>
-                {data.title}
+        <div className='game-container'>
+            <div className='game-title'>
+                <h1>{data.title}</h1>
+            </div>
+            <div className='game-inner-container'>
+                <div className='game-left'>
+                    <img src={data.thumbnail} alt={data.title}/>
+                </div>
+                <div className='game-right'>
+                    <a className='button' href={game}  rel="noopener noreferrer" target="_blank" >
+                        Play Game
+                    </a>
+                    <div className='info'>
+                        <span>
+                            Genre {data.genre}
+                        </span>
+                        <span>
+                            Developer {data.developer}
+                        </span>
+                        <span>
+                            Released {data.release_date}
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
     )
