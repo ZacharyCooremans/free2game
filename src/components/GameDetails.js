@@ -53,6 +53,10 @@ const GameDetails = () => {
                     </div>
                 </div>
             </div>
+                <div>
+                    Describe
+                    <p>{data.description}</p>
+                </div>
         </div>
     )
 }
