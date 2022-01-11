@@ -22,3 +22,8 @@
   margin-top: 20px;
   display: flex;
 }
+
+.image {
+  width: 25rem;
+  height: 25rem;
+}
