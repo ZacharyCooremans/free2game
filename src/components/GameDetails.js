@@ -6,6 +6,7 @@ const GameDetails = () => {
     const [data, setData] = useState([])
 
     const id = localStorage.getItem('id')
+
     useEffect(() => {
 
         const options = {
@@ -34,7 +35,7 @@ const GameDetails = () => {
             </div>
             <div className='game-inner-container'>
                 <div className='game-left'>
-                    <img src={data.thumbnail} alt={data.title}/>
+                    <img className='image' src={data.thumbnail} alt={data.title}/>
                 </div>
                 <div className='game-right'>
                     <a className='button' href={game}  rel="noopener noreferrer" target="_blank" >
