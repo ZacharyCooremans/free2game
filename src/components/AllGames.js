@@ -22,8 +22,8 @@ const AllGames = () => {
             <Container>
                 {games.map((game) => {
                     return(
-                        <Card> 
-                            <GameCard key={game.id} game={game} />
+                        <Card key={game.id} > 
+                            <GameCard game={game} />
                         </Card>
                     )
                 })}

@@ -18,12 +18,22 @@
 }
 
 .info {
+  border: 2px solid red;
   padding-left: 3px;
-  margin-top: 20px;
+  margin-top: 25px;
   display: flex;
+  width: 35rem;
+  justify-content: space-evenly;
+}
+.info span {
+  display: flex;
+  justify-content: center;
 }
 
 .image {
-  width: 25rem;
-  height: 25rem;
+  max-width: 100%;
+  height: auto;
+}
+.game-left {
+  border: 2px solid red;
 }

@@ -42,15 +42,18 @@ const GameDetails = () => {
                         Play Game
                     </a>
                     <div className='info'>
-                        <span>
-                            Genre {data.genre}
-                        </span>
-                        <span>
-                            Developer {data.developer}
-                        </span>
-                        <span>
-                            Released {data.release_date}
-                        </span>
+                        <div>
+                            <span>Genre</span> 
+                            <span>{data.genre}</span>
+                        </div>
+                        <div>
+                            <span>Developer</span>
+                            <span>{data.developer}</span>
+                        </div>
+                        <div>
+                            <span>Released</span>
+                            <span>{data.release_date}</span>
+                        </div>
                     </div>
                 </div>
             </div>
