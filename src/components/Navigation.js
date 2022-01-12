@@ -34,6 +34,9 @@ const Right = styled.div`
     display: flex;
     justify-content: space-evenly;
     margin-left: 25%;
+    h2:hover {
+        cursor: pointer;
+    }
 `
 
 export default Navigation
