@@ -26,9 +26,13 @@ const GameCard = (props) => {
 export default GameCard
 
 const Container = styled.div`
-    border: 2px solid blue;
-    width: 500px;
-    height: 425px;
+    border: 2px solid grey;
+    width: 24rem;
+    height: 27rem;
+
+    :hover {
+        cursor: pointer;
+    }
 `
 
 const ShortC = styled.div`

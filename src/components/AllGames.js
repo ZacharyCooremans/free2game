@@ -39,9 +39,8 @@ const Container = styled.div`
     background-color: #6b7994;
     color: #d6d9d7;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
 `
 const Card = styled.div`
-    margin: 10px;
+    margin: 15px;
 `
