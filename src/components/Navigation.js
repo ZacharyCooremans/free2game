@@ -21,17 +21,16 @@ const Navigation = () => {
 
 const Container = styled.div`
     display: flex;
-    background-color: black;
+    background-color: #8994aa;
     color: #d6d9d7;
 `
 const Left = styled.div`
-    border: 2px solid blue;
     width: 25%
 `
 const Right = styled.div`
-    border: 2px solid red;
     width: 50%;
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
     margin-left: 25%;
     h2:hover {
