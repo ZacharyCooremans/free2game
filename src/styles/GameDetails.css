@@ -1,6 +1,7 @@
 .game-container {
   background-color: #6b7994;
-  height: 50rem;
+  color: #d6d9d7;
+  padding-bottom: 1rem;
 }
 
 .game-title {
