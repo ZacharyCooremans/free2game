@@ -26,7 +26,7 @@ const GameCard = (props) => {
 export default GameCard
 
 const Container = styled.div`
-    border: 2px solid grey;
+    border: 1px solid grey;
     width: 24rem;
     height: 27rem;
 

@@ -38,7 +38,7 @@ const GameDetails = () => {
                     <img className='image' src={data.thumbnail} alt={data.title}/>
                 </div>
                 <div className='game-right'>
-                    <a className='button' href={game}  rel="noopener noreferrer" target="_blank" >
+                    <a className='button' href={game} rel="noopener noreferrer" target="_blank" >
                         Play Game
                     </a>
                     <div className='info'>

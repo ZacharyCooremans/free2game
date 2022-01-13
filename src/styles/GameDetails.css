@@ -1,5 +1,9 @@
 .game-container {
-  background-color: navy;
+  background-color: #6b7994;
+}
+
+.game-title {
+  padding: 1px;
 }
 
 .game-inner-container {
