@@ -1,11 +1,11 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import '../styles/GameDetails.css'
 
 const GameDetails = () => {
     const [data, setData] = useState([])
-
-    const id = localStorage.getItem('id')
+    const{ id } = useParams()
 
     useEffect(() => {
         const options = {
