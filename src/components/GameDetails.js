@@ -8,7 +8,6 @@ const GameDetails = () => {
     const id = localStorage.getItem('id')
 
     useEffect(() => {
-
         const options = {
             method: 'GET',
             url: 'https://free-to-play-games-database.p.rapidapi.com/api/game',
@@ -57,7 +56,7 @@ const GameDetails = () => {
                     </div>
                 </div>
             </div>
-                <div>
+                <div className='description'>
                     Describe
                     <p>{data.description}</p>
                 </div>

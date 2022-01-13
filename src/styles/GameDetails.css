@@ -1,5 +1,6 @@
 .game-container {
   background-color: #6b7994;
+  height: 50rem;
 }
 
 .game-title {
@@ -34,10 +35,19 @@
   justify-content: center;
 }
 
+.game-left {
+  width: 45rem;
+  height: 25rem;
+}
+
 .image {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
-.game-left {
-  border: 2px solid red;
+
+.description {
+  border-top: 1px solid grey;
+  margin-top: 2rem;
+  padding-left: 5%;
+  padding-right: 5%;
 }
