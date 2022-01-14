@@ -6,8 +6,7 @@ const GameCard = (props) => {
     const { push } = useHistory()
 
     const click = () => {
-        localStorage.setItem('id', props.game.id)
-        push('/GameDetails')
+        push(`/GameDetails/${props.game.id}`)
     }
 
     return (

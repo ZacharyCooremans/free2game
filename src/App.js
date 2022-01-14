@@ -22,7 +22,7 @@ function App() {
           <Favorites />
         </Route>
 
-        <Route path='/GameDetails'>
+        <Route path='/GameDetails/:id'>
           <GameDetails />
         </Route>
         <Route path='/'>
