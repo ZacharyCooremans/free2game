@@ -24,8 +24,14 @@ const GameDetails = () => {
             console.error(error);
         });
     }, [id])
+
     console.log(data)
+
     const game = data.game_url
+
+    const handleClick = () => {
+        window.open(game)
+    }
 
     return(
         <div className='game-container'>
@@ -37,9 +43,10 @@ const GameDetails = () => {
                     <img className='image' src={data.thumbnail} alt={data.title}/>
                 </div>
                 <div className='game-right'>
-                    <a className='button' href={game} rel="noopener noreferrer" target="_blank" >
+                    <button className='button' onClick={handleClick} >
                         Play Game
-                    </a>
+                    </button>
+                    <button className='button'>Add To Favorites</button>
                     <div className='info'>
                         <div>
                             <span>Genre:</span> 
