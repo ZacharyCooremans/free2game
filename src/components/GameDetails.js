@@ -5,6 +5,7 @@ import '../styles/GameDetails.css'
 
 const GameDetails = () => {
     const [data, setData] = useState([])
+    const [fav, setFav] = useState([])
     const{ id } = useParams()
 
     useEffect(() => {
@@ -33,6 +34,11 @@ const GameDetails = () => {
         window.open(game)
     }
 
+    const addFav = () => {
+        setFav(data.id)
+    }
+    console.log('FAV',fav)
+
     return(
         <div className='game-container'>
             <div className='game-title'>
@@ -46,7 +52,7 @@ const GameDetails = () => {
                     <button className='button' onClick={handleClick} >
                         Play Game
                     </button>
-                    <button className='button'>Add To Favorites</button>
+                    <button className='button' onClick={addFav}>Add To Favorites</button>
                     <div className='info'>
                         <div>
                             <span>Genre:</span> 
