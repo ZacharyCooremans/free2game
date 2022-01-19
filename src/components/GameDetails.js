@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import '../styles/GameDetails.css'
 
-const GameDetails = () => {
+const GameDetails = (props) => {
+    const {fav} = props
     const [data, setData] = useState([])
-    const fav = []
     const{ id } = useParams()
 
     useEffect(() => {
@@ -38,7 +38,6 @@ const GameDetails = () => {
         if(fav.includes(data.id)) {
             console.log('test')
         } else {
-
             fav.push(data.id)
             console.log(fav)
             localStorage['favs'] = JSON.stringify(fav)

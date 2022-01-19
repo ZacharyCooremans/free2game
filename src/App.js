@@ -7,6 +7,7 @@ import GameDetails from './components/GameDetails'
 import { Route, Switch} from "react-router-dom"
 
 function App() {
+  const fav = []
   return (
     <div className="App">
       <div>
@@ -23,8 +24,9 @@ function App() {
         </Route>
 
         <Route path='/GameDetails/:id'>
-          <GameDetails />
+          <GameDetails fav={fav} />
         </Route>
+
         <Route path='/'>
           <AllGames />
         </Route>
