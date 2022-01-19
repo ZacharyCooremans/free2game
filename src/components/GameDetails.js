@@ -5,7 +5,7 @@ import '../styles/GameDetails.css'
 
 const GameDetails = () => {
     const [data, setData] = useState([])
-    const [fav, setFav] = useState([])
+    const fav = []
     const{ id } = useParams()
 
     useEffect(() => {
@@ -35,9 +35,15 @@ const GameDetails = () => {
     }
 
     const addFav = () => {
-        setFav(data.id)
+        if(fav.includes(data.id)) {
+            console.log('test')
+        } else {
+
+            fav.push(data.id)
+            console.log(fav)
+            localStorage['favs'] = JSON.stringify(fav)
+        }
     }
-    console.log('FAV',fav)
 
     return(
         <div className='game-container'>
