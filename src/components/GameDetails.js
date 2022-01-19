@@ -36,7 +36,12 @@ const GameDetails = (props) => {
 
     const addFav = () => {
         if(fav.includes(data.id)) {
-            console.log('test')
+            for(let i = 0; i < fav.length; i++){
+                if(fav[i] === data.id){
+                    fav.splice(i, 1)
+                }
+            }
+            console.log(fav)
         } else {
             fav.push(data.id)
             console.log(fav)
