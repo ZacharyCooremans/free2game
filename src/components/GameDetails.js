@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import '../styles/GameDetails.css'
 
-const GameDetails = () => {
+const GameDetails = (props) => {
+    const {fav} = props
     const [data, setData] = useState([])
-    const fav = []
     const{ id } = useParams()
+    const [like, setLike] = useState(false)
 
     useEffect(() => {
         const options = {
@@ -36,10 +37,16 @@ const GameDetails = () => {
 
     const addFav = () => {
         if(fav.includes(data.id)) {
-            console.log('test')
+            for(let i = 0; i < fav.length; i++){
+                if(fav[i] === data.id){
+                    fav.splice(i, 1)
+                    setLike(!like)
+                }
+            }
+            console.log(fav)
         } else {
-
             fav.push(data.id)
+            setLike(!like)
             console.log(fav)
             localStorage['favs'] = JSON.stringify(fav)
         }
@@ -58,7 +65,10 @@ const GameDetails = () => {
                     <button className='button' onClick={handleClick} >
                         Play Game
                     </button>
-                    <button className='button' onClick={addFav}>Add To Favorites</button>
+                    {fav.includes(data.id) ? 
+                            <button className='button' onClick={addFav}>Remove From Favorites</button> : 
+                            <button className='button' onClick={addFav}>Add To Favorites</button>
+                        }
                     <div className='info'>
                         <div>
                             <span>Genre:</span> 
