@@ -27,8 +27,6 @@ const GameDetails = (props) => {
         });
     }, [id])
 
-    console.log(data)
-
     const game = data.game_url
 
     const handleClick = () => {
@@ -43,11 +41,9 @@ const GameDetails = (props) => {
                     setLike(!like)
                 }
             }
-            console.log(fav)
         } else {
             fav.push(data.id)
             setLike(!like)
-            console.log(fav)
             localStorage['favs'] = JSON.stringify(fav)
         }
     }
