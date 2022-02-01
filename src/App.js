@@ -5,9 +5,11 @@ import Favorites from './components/Favorites'
 import Navigation from './components/Navigation'
 import GameDetails from './components/GameDetails'
 import { Route, Switch} from "react-router-dom"
+import React, { useState} from 'react'
+
 
 function App() {
-  const fav = []
+  const [fav, setFav] = useState([])
   return (
     <div className="App">
       <div>
@@ -24,7 +26,7 @@ function App() {
         </Route>
 
         <Route path='/GameDetails/:id'>
-          <GameDetails fav={fav} />
+          <GameDetails fav={fav} setFav={setFav} />
         </Route>
 
         <Route path='/'>

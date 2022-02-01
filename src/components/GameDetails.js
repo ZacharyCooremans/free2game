@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import '../styles/GameDetails.css'
 
 const GameDetails = (props) => {
-    const {fav} = props
+    const {fav, setFav} = props
     const [data, setData] = useState([])
     const{ id } = useParams()
     const [like, setLike] = useState(false)
@@ -27,11 +27,19 @@ const GameDetails = (props) => {
         });
     }, [id])
 
+    //MIGHT BE TROUBLE LATER 
+    //IF LOCAL IS EMPTY IT MIGHT BE THE REASON FOR ERROR
+    useEffect(() => {
+        setFav(JSON.parse(localStorage.getItem('favs')))
+    }, [])
+
     const game = data.game_url
 
     const handleClick = () => {
         window.open(game)
     }
+
+    console.log(fav)
 
     const addFav = () => {
         if(fav.includes(data.id)) {
@@ -41,6 +49,7 @@ const GameDetails = (props) => {
                     setLike(!like)
                 }
             }
+            localStorage['favs'] = JSON.stringify(fav)
         } else {
             fav.push(data.id)
             setLike(!like)
