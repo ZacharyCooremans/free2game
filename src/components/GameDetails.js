@@ -41,7 +41,6 @@ const GameDetails = (props) => {
 
     console.log(fav)
 
-    // SOMETHING WRONG WITH SAVING LOCAL WHEN UNLIKED
     const addFav = () => {
         if(fav.includes(data.id)) {
             for(let i = 0; i < fav.length; i++){
@@ -55,7 +54,6 @@ const GameDetails = (props) => {
             fav.push(data.id)
             setLike(!like)
             localStorage['favs'] = JSON.stringify(fav)
-            // localStorage.setItem('favs', JSON.stringify(fav))
         }
     }
 
