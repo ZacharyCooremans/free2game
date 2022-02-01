@@ -1,6 +1,12 @@
+import React, { useEffect, useState } from 'react'
+
 const Favorites = () => {
 
-    console.log(localStorage.getItem('favs'))
+    const [data, setData] = useState([])
+    useEffect(() => {
+        setData(JSON.parse(localStorage.getItem('favs')))
+    }, [])
+    console.log(data)
 
     return(
         <div>

@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import '../styles/GameDetails.css'
 
 const GameDetails = (props) => {
-    const {fav} = props
+    const {fav, setFav} = props
     const [data, setData] = useState([])
     const{ id } = useParams()
     const [like, setLike] = useState(false)
@@ -26,6 +26,10 @@ const GameDetails = (props) => {
             console.error(error);
         });
     }, [id])
+
+    useEffect(() => {
+        setFav(JSON.parse(localStorage.getItem('favs')))
+    }, [fav])
 
     const game = data.game_url
 
