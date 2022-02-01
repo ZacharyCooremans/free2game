@@ -27,6 +27,8 @@ const GameDetails = (props) => {
         });
     }, [id])
 
+    //MIGHT BE TROUBLE LATER 
+    //IF LOCAL IS EMPTY IT MIGHT BE THE REASON FOR ERROR
     useEffect(() => {
         setFav(JSON.parse(localStorage.getItem('favs')))
     }, [fav])
