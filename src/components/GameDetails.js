@@ -31,7 +31,7 @@ const GameDetails = (props) => {
     //IF LOCAL IS EMPTY IT MIGHT BE THE REASON FOR ERROR
     useEffect(() => {
         setFav(JSON.parse(localStorage.getItem('favs')))
-    }, [fav])
+    }, [])
 
     const game = data.game_url
 
@@ -39,6 +39,9 @@ const GameDetails = (props) => {
         window.open(game)
     }
 
+    console.log(fav)
+
+    // SOMETHING WRONG WITH SAVING LOCAL WHEN UNLIKED
     const addFav = () => {
         if(fav.includes(data.id)) {
             for(let i = 0; i < fav.length; i++){
@@ -47,10 +50,12 @@ const GameDetails = (props) => {
                     setLike(!like)
                 }
             }
+            localStorage['favs'] = JSON.stringify(fav)
         } else {
             fav.push(data.id)
             setLike(!like)
             localStorage['favs'] = JSON.stringify(fav)
+            // localStorage.setItem('favs', JSON.stringify(fav))
         }
     }
 
