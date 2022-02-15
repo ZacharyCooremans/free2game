@@ -1,49 +1,44 @@
 import React, { useEffect, useState } from 'react'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
+import GameCard from './GameCard'
 
 const Favorites = () => {
 
     const [test, setTest] = useState([])
+    const [data, setData] = useState([])
+    const [favId, setFavId] = useState([])
 
     // NEED TO LEARN HOW TO MAP THROUGH IDS INTO AXIOS
-    const [data, setData] = useState([])
+    
     useEffect(() => {
-        setData(JSON.parse(localStorage.getItem('favs')))
+        setFavId(JSON.parse(localStorage.getItem('favs')))
+        axiosWithAuth()
+        .get('/games')
+        .then((res) => {
+            setTest(res.data)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
     }, [])
-    console.log(data)
 
-//     const options = {
-//         method: 'GET',
-//         url: 'https://free-to-play-games-database.p.rapidapi.com/api/game',
-//         params: {id: 3},
-//         headers: {
-//             'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com',
-//             'x-rapidapi-key': 'a1999b0534msh272354eea50082cp130fbbjsn9dcc7249f234'
-//     }
-// };
-
-//     axios.request(options).then(function (response) {
-//         console.log(response.data);
-//     }).catch(function (error) {
-//         console.error(error);
-//     });
-
-useEffect(() => {
-    axiosWithAuth()
-    .get('/games')
-    .then((res) => {
-        setTest(res.data)
-    })
-    .catch((err) => {
-        console.log(err)
-    })
-}, [])
-
-console.log(test[0])
+    for(let i = 0; i < test.length; i++) {
+        if(favId.includes(test[i].id)) {
+            data.push(test[i])
+        }
+    }
+console.log(data)
 
     return(
         <div>
             <h1>Test FAV</h1>
+            {data.map((game) => {
+                    return(
+                        <div key={game.id} > 
+                            <GameCard game={game} />
+                        </div>
+                    )
+                })}
         </div>
     )
 }

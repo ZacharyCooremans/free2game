@@ -4,6 +4,10 @@ import styled from 'styled-components'
 import GameCard from './GameCard'
 
 const AllGames = () => {
+
+    // THIS SKRIPT NEEDS TO BE ON THE START SKRIPT ON MY MAIN COMPUTER NOT LAPTOP
+    //--openssl-legacy-provider
+    
     const [games, setGames] = useState([])
 
     useEffect(() => {
