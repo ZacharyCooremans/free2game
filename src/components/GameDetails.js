@@ -30,7 +30,11 @@ const GameDetails = (props) => {
     //MIGHT BE TROUBLE LATER 
     //IF LOCAL IS EMPTY IT MIGHT BE THE REASON FOR ERROR
     useEffect(() => {
-        setFav(JSON.parse(localStorage.getItem('favs')))
+        if(localStorage.getItem('favs') === null) {
+            setFav([])
+        } else {
+            setFav(JSON.parse(localStorage.getItem('favs')))
+        }
     }, [])
 
     const game = data.game_url
@@ -38,8 +42,6 @@ const GameDetails = (props) => {
     const handleClick = () => {
         window.open(game)
     }
-
-    console.log(fav)
 
     const addFav = () => {
         if(fav.includes(data.id)) {
