@@ -1,5 +1,4 @@
 import './App.css';
-import Search from './components/Search'
 import AllGames from './components/AllGames'
 import Favorites from './components/Favorites'
 import Navigation from './components/Navigation'
@@ -16,10 +15,6 @@ function App() {
         <Navigation />
       </div>
       <Switch>
-
-        <Route path='/Search'>
-          <Search />
-        </Route>
 
         <Route path='/Favorites'>
           <Favorites />

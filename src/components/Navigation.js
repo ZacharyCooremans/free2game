@@ -12,7 +12,6 @@ const Navigation = () => {
             </Left>
             <Right>
                 <h2 onClick={() => history.push('/')}>All Games</h2>
-                <h2 onClick={() => history.push('/Search')}>Search</h2>
                 <h2 onClick={() => history.push('/Favorites')}>My Favorite</h2>
             </Right>
         </Container>
