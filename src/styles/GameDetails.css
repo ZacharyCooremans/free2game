@@ -1,6 +1,4 @@
 .game-container {
-  background-color: #6b7994;
-  color: #d6d9d7;
   padding-bottom: 1rem;
 }
 
@@ -27,7 +25,6 @@
 }
 
 .info {
-  border: 2px solid red;
   padding-left: 3px;
   margin-top: 25px;
   display: flex;

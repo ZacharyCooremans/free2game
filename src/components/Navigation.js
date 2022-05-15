@@ -11,8 +11,8 @@ const Navigation = () => {
                 <h1>Free2Game</h1>
             </Left>
             <Right>
-                <h2 onClick={() => history.push('/')}>All Games</h2>
-                <h2 onClick={() => history.push('/Favorites')}>My Favorite</h2>
+                <h1 onClick={() => history.push('/')}>All Games</h1>
+                <h1 onClick={() => history.push('/Favorites')}>My Favorite</h1>
             </Right>
         </Container>
     )
@@ -21,18 +21,22 @@ const Navigation = () => {
 const Container = styled.div`
     display: flex;
     background-color: #8994aa;
-    color: #d6d9d7;
+    h1 {
+        background-color: #8994aa;
+    }
 `
 const Left = styled.div`
+    background-color: #8994aa;
     width: 25%
 `
 const Right = styled.div`
+    background-color: #8994aa;
     width: 50%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     margin-left: 25%;
-    h2:hover {
+    h1:hover {
         cursor: pointer;
     }
 `

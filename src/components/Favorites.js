@@ -25,31 +25,42 @@ const Favorites = () => {
 
     // Displays games thats id matches my favs id
     for(let i = 0; i < test.length; i++) {
-        if(favId.includes(test[i].id)) {
+
+        if(localStorage.getItem('favs') === null) {
+            return(
+                <div>
+                    <h1>No games! Go find a game you like!</h1>
+                </div>
+            )
+        }
+        else if(favId.includes(test[i].id)) {
             data.push(test[i])
         }
     }
+    console.log(data)
+    if(data.length > 0) {
 
-    return(
-        <div>
-            <h1>Favorite Games</h1>
-            <Container>
-                {data.map((game) => {
-                        return(
-                            <Card key={game.id} > 
-                                <GameCard game={game} />
-                            </Card>
-                        )
-                    })}
-            </Container>
-        </div>
+        return(
+            <div>
+                <Container>
+                {}
+                    {data.map((game) => {
+                            return(
+                                <Card key={game.id} > 
+                                    <GameCard game={game} />
+                                </Card>
+                            )
+                        })}
+                </Container>
+            </div>
+        )
+    } else return(
+        <h1>No games! Go find a game you like! </h1>
     )
 }
 
 const Container = styled.div`
     display: flex;
-    background-color: #6b7994;
-    color: #d6d9d7;
     flex-wrap: wrap;
     justify-content: space-around;
 `

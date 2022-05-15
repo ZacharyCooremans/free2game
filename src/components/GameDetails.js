@@ -58,7 +58,6 @@ const GameDetails = (props) => {
             localStorage['favs'] = JSON.stringify(fav)
         }
     }
-
     return(
         <div className='game-container'>
             <div className='game-title'>
@@ -102,6 +101,7 @@ const GameDetails = (props) => {
                 </div>
         </div>
     )
+
 }
 
 export default GameDetails
