@@ -40,8 +40,6 @@ export default AllGames
 
 const Container = styled.div`
     display: flex;
-    background-color: #6b7994;
-    color: #d6d9d7;
     flex-wrap: wrap;
     justify-content: space-around;
 `
